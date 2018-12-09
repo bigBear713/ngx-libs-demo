@@ -19,7 +19,7 @@
             "assets": [
               "src/favicon.ico",
               "src/favicon.png",
-              "src/CHANGELOG.MD",
+              "src/changelog.md",
               {
                 "glob": "**/*",
                 "input": "src/assets",
@@ -44,10 +44,12 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }]
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         },
@@ -111,6 +113,46 @@
               "e2e/tsconfig.e2e.json"
             ],
             "exclude": []
+          }
+        }
+      }
+    },
+    "ngx-libs": {
+      "root": "projects/ngx-libs",
+      "sourceRoot": "projects/ngx-libs/src",
+      "projectType": "library",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-libs/tsconfig.lib.json",
+            "project": "projects/ngx-libs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-libs/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-libs/src/test.ts",
+            "tsConfig": "projects/ngx-libs/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-libs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-libs/tsconfig.lib.json",
+              "projects/ngx-libs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

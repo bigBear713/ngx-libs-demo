@@ -21,6 +21,14 @@
         "name": "tslint-language-service"
       }
     ],
-    "types": []
+    "types": [],
+    "paths": {
+      "ngx-libs": [
+        "dist/ngx-libs"
+      ],
+      "ngx-libs/*": [
+        "dist/ngx-libs/*"
+      ]
+    }
   }
 }
