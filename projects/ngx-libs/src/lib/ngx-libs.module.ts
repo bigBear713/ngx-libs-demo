@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
+import { NgxShadeModule } from './ngx-shade';
+
+const MODULES = [
+  NgxShadeModule
+];
 
 @NgModule({
-  declarations: [],
   imports: [
+    ...MODULES,
   ],
-  exports: []
+  declarations: [],
+  exports: [
+    ...MODULES
+  ]
 })
 export class NgxLibsModule { }

@@ -1,0 +1,27 @@
+<div class="demo-item">
+  <div style="width:500px;height:500px;">
+    <ngx-shade [ngShow]="showShade1">
+      简单用法，使用“ngShow”属性控制是否显示遮罩
+    </ngx-shade>
+  </div>
+  <button (click)="changeShowShade(1)">切换遮罩的显示状态</button>
+</div>
+<div class="demo-item">
+  <div style="width:500px;height:500px;">
+    <ngx-shade [(ngShow)]="showShade2" ngClickAutoHide="true">
+      简单用法，使用“ngShow”属性控制是否显示遮罩。同时通过设置“ngClickAutoHide”设置在显示遮罩的情况下，点击组件区域，自动隐藏遮罩的效果
+    </ngx-shade>
+  </div>
+  <button (click)="changeShowShade(2)">切换遮罩的显示状态</button>
+</div>
+<div class="demo-item">
+  <div style="width:500px;height:500px;">
+    <ngx-shade [(ngShow)]="showShade3" [ngColor]="shade3Color" [ngOpacity]="shade3Opacity">
+      简单用法，使用“ngShow”属性控制是否显示遮罩。同时通过设置“ngColor”设置遮罩的颜色，设置“ngOpacity”控制遮罩透明度
+    </ngx-shade>
+  </div>
+
+  颜色设置：<input type="text"  [(ngModel)]="shade3Color">
+  透明度设置：<input type="number"  [(ngModel)]="shade3Opacity">
+  <button (click)="changeShowShade(3)">切换遮罩的显示状态</button>
+</div>
