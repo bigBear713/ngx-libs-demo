@@ -46,6 +46,7 @@
     "core-js": "^2.6.0",
     "font-awesome": "^4.7.0",
     "ionicons": "^4.4.6",
+    "ngx-libs": "file:libs/ngx-libs/ngx-libs-7.0.0.tgz",
     "normalize.css": "^8.0.1",
     "rxjs": "^6.2.1",
     "socicon": "^3.0.5",
