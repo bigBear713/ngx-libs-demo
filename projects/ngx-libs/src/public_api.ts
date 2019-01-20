@@ -3,4 +3,5 @@
  */
 
 export * from './lib/ngx-libs.module';
-export * from './lib/ngx-shade';
+export { NgxShadeModule } from './lib/ngx-shade/ngx-shade.module';
+export { NgxShadeComponent } from './lib/ngx-shade/ngx-shade.component';

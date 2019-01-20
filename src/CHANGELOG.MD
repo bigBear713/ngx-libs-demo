@@ -3,6 +3,7 @@
 ### ng-sipsd-demo
 - 增加导航示例（wangjx）；
 - 调整打包编译时的base-href，使打包后的代码更具通用性.更新ngx-libs，修复无法以生产模式打包的问题（wangjx）；
+- 更新readme.md说明文档；更新ngx-libs，优化组件模块的导出，实现组件模块的按需加载（wangjx）；
 
 ## 2019-01-17
 ### ng-sipsd-demo

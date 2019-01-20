@@ -22,3 +22,7 @@
 
 因为.tgz压缩文件为二进制文件，git无法识别前后差异，因此谨慎提交打包后的.tgz文件，否则后期git日志文件可能变得很大。因此工程中的libs文件夹中的.tgz文件本人也不能保证时最新的，下载本工程后，最好执行“npm run package:ngx-libs”命令确保node_modules中的为最新代码。
 
+以开发模式编译部署整个示例工程：执行命令：npm run build
+
+以生产模式模式编译部署整个示例工程：执行命令：npm run build:prod
+
