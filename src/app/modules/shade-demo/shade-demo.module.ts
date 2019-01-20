@@ -11,6 +11,7 @@ import { ShadeDemoRoutesModule } from './shade-demo.routing';
     FormsModule,
     ShadeDemoRoutesModule,
     NgxLibsModule,
+    // NgxShadeModule,
   ],
   declarations: [ShadeDemoComponent]
 })

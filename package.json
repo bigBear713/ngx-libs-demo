@@ -14,7 +14,7 @@
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
     "start": "ng serve ",
-    "build": "ng build --base-href /ngx-libs-demo/ ",
+    "build": "ng build --base-href ./ ",
     "build:prod": "npm run build -- --prod  ",
     "build:prod:aot": "npm run build:prod -- --aot ",
     "gene:lib": "ng generate library --prefix=ngx",

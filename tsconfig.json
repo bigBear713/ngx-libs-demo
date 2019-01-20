@@ -22,13 +22,6 @@
       }
     ],
     "types": [],
-    "paths": {
-      "ngx-libs": [
-        "dist/ngx-libs"
-      ],
-      "ngx-libs/*": [
-        "dist/ngx-libs/*"
-      ]
-    }
+    "paths": {}
   }
 }

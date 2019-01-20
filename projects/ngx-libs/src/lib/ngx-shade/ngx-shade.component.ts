@@ -33,10 +33,10 @@ import {
 export class NgxShadeComponent implements OnInit {
   // 点击遮罩时是否自动隐藏
   @Input() ngClickAutoHide: boolean = false;
-  // 透明度
-  @Input() ngOpacity: number = 0.4;
   // 遮罩颜色
   @Input() ngColor: string = '#000';
+  // 透明度
+  @Input() ngOpacity: number = 0.4;
   // 是否显示遮罩
   @Input() ngShow: boolean = false;
   // ngShow值改变时触发，用于向父组件传递ngShow改变后的值

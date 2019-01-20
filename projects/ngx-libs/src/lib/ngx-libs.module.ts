@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgxShadeModule } from './ngx-shade';
+import { NgxShadeModule } from './ngx-shade/ngx-shade.module';
 
 const MODULES = [
   NgxShadeModule
