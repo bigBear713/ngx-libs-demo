@@ -1,4 +1,8 @@
 # v7.0.0
+## 2019-01-20
+### ng-sipsd-demo
+- 增加导航示例（wangjx）；
+
 ## 2019-01-17
 ### ng-sipsd-demo
 - 增加shade-demo的效果图（wangjx）；
