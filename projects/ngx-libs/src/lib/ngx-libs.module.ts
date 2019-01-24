@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { NgxShadeModule } from './ngx-shade/ngx-shade.module';
+import { NgxPrismjsModule } from './ngx-prismjs/ngx-prismjs.module';
 
 const MODULES = [
-  NgxShadeModule
+  NgxPrismjsModule,
+  NgxShadeModule,
 ];
 
 @NgModule({

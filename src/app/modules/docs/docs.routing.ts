@@ -12,6 +12,10 @@ const routes: Routes = [
     },
     children: [
       {
+        path: 'prismjs-demo',
+        loadChildren: './../prismjs-demo/prismjs-demo.module#PrismjsDemoModule'
+      },
+      {
         path: 'shade-demo',
         loadChildren: './../shade-demo/shade-demo.module#ShadeDemoModule'
       },

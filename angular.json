@@ -28,7 +28,6 @@
               }
             ],
             "styles": [
-              "node_modules/ionicons/dist/scss/ionicons.scss",
               "src/theme/style.scss"
             ],
             "scripts": []

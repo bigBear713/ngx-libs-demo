@@ -3,5 +3,10 @@
  */
 
 export * from './lib/ngx-libs.module';
-export { NgxShadeModule } from './lib/ngx-shade/ngx-shade.module';
-export { NgxShadeComponent } from './lib/ngx-shade/ngx-shade.component';
+export {
+    NgxPrismjsModule,
+    NgxPrismjsDirective,
+    NgxPrismjsService
+} from './lib/ngx-prismjs/index';
+export { NgxShadeModule, NgxShadeComponent } from './lib/ngx-shade/index';
+

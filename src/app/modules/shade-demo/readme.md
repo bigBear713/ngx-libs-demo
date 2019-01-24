@@ -1,7 +1,7 @@
 # ngx-shade组件：
 ## 说明
 - 这是一个遮罩组件，实现在指定区域内显示遮罩。显示遮罩时，边无法对区域内的内容进行操作。
-- 使用时，需要引入模块“NgxLibsModule”或“NgxShadeModule”.引入“NgxLibsModule”时，可使用ngx-libs中的任何一种组件，但是最终打包部署时，也会将整个ngx-libs的代码打包进去；引入“NgxShadeModule”时，将只能使用当前组件，但是最终打包部署时，会只将当前组件的相关代码打包进去；
+- 使用时，需要引入模块“NgxLibsModule”或“NgxShadeModule”.引入“NgxLibsModule”时，可使用ngx-libs中的任何一种组件；引入“NgxShadeModule”时，将只能使用当前组件；
 
 ## 使用示例
 `<ngx-shade>// 这是要显示遮罩的内容... </ngx-shade>`

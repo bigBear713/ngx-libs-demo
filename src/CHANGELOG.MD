@@ -1,4 +1,8 @@
 # v7.0.0
+## 2019-01-24
+### ng-sipsd-demo
+- 更新ngx-libs，增加ngxPrismjs指令组件，并编写prismjs-demo的高亮组件使用示例(wangjx)。
+
 ## 2019-01-20
 ### ng-sipsd-demo
 - 增加导航示例（wangjx）；

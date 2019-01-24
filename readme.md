@@ -23,3 +23,5 @@
 # 组件说明：
 - [ngx-shade](/src/app/modules/shade-demo/readme.md)
 
+# 指令说明
+- [ngxPrismjs](/src/app/modules/prismjs-demo/readme.md)
