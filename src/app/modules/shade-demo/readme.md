@@ -7,6 +7,7 @@
 `<ngx-shade>// 这是要显示遮罩的内容... </ngx-shade>`
 
 ## API接口：
+### ngx-shade组件
 - [ngShow] - boolean - 控制是否显示遮罩。true表示显示，false表示不显示.支持双向绑定写法[(ngShow)]="show";
 - (ngShowChange) - EventEmitter - 获取当前是否显示遮罩的状态。获取的值为true时，表示内容上会显示遮罩；获取的值为false时，表示内容上没有显示遮罩；
 - [ngClickAutoHide] - boolean - 点击遮罩时是否自动隐藏。true时表示自动隐藏，false时表示不自动隐藏；
