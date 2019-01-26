@@ -1,8 +1,9 @@
 # v7.0.0
 ## 2019-01-26
 ### ngx-libs-demo
-- 更新项目说明文件readme.md;更新怕prismjs-demo的readme.md内容（wangjx）;
+- 更新项目说明文件readme.md;更新prismjs-demo的readme.md内容（wangjx）;
 - 调整更新日志的文件名，从全部大写调整为全部小写，统一日志文件的命名方式（wangjx）；
+- 调整shade-demo的readme.md内容（wangjx）；
 
 ## 2019-01-24
 ### ngx-libs-demo
