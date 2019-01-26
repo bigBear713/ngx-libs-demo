@@ -18,6 +18,8 @@
 - 以开发模式编译部署整个示例工程：执行命令：`npm run build`
 - 以生产模式模式编译部署整个示例工程：执行命令：`npm run build:prod`
 
+# [ngx-libs-demo更新日志](/src/changelog.md)
+
 # [ngx-libs更新日志](/projects/ngx-libs/changelog.md)
 
 # 组件说明：

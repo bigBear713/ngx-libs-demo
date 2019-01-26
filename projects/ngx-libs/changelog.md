@@ -1,4 +1,8 @@
 # v7.0.0
+## 2019-01-26
+### ngx-libs
+- ngx-prismjs:修复因代码注释导致无法编译的问题（wangjx）；
+
 ## 2019-01-24
 ### ngx-libs
 - ngx-primejs:增加primejs代码高亮组件（wangjx）；

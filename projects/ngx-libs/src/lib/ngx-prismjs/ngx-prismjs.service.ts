@@ -229,7 +229,7 @@ export class NgxPrismjsService {
   /** 获取Prism对象
    *
    *
-   * @returns {*}
+   * @returnses {*}
    * @memberof NgxPrismjsService
    */
   getPrism(): any {
@@ -252,11 +252,11 @@ export class NgxPrismjsService {
     return Prism.highlight(code, grammar, language);
   }
 
-  /** 高亮显示页面种所有内容
+  /** 高亮显示页面中所有内容
    *
    *
-   * @param {boolean} [async]
-   * @param {*} [callback]
+   * @params {boolean} [async]
+   * @params {*} [callback]
    * @memberof NgxPrismjsService
    */
   highlightAll(async?: boolean, callback?: any): void {
@@ -266,12 +266,12 @@ export class NgxPrismjsService {
   /** 将容器内的内容全部高亮显示
    *
    *
-   * @param {HTMLElement} container
-   * @param {boolean} [async]
-   * @param {*} [callback]
+   * @params {HTMLElement} container
+   * @params {boolean} [async]
+   * @params {*} [callback]
    * @memberof NgxPrismjsService
    */
-  highlightAllUnder(container: HTMLElement, async?: boolean, callback?: any) {
+  highlightAllUnder(container: HTMLElement, async?: boolean, callback?: any): void {
     Prism.highlightAllUnder(container, async, callback);
   }
 
