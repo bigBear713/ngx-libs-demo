@@ -10,7 +10,7 @@ export class NgxPrismjsDirective implements AfterViewInit {
 
   constructor(
     private elementRef: ElementRef,
-    private servicejsService: NgxPrismjsService,
+    private prismjsService: NgxPrismjsService,
   ) { }
 
   ngAfterViewInit() {
@@ -23,7 +23,7 @@ export class NgxPrismjsDirective implements AfterViewInit {
       element.classList.add(languageSign1);
     }
 
-    this.servicejsService.highlightElement(element);
+    this.prismjsService.highlightElement(element);
   }
 
 }
