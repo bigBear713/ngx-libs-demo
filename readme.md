@@ -18,11 +18,12 @@
 - 以开发模式编译部署整个示例工程：执行命令：`npm run build`
 - 以生产模式模式编译部署整个示例工程：执行命令：`npm run build:prod`
 
-# [ngx-libs-demo更新日志](/src/changelog.md)
-
 # [ngx-libs更新日志](/projects/ngx-libs/changelog.md)
 
+# [ngx-libs-demo更新日志](/src/changelog.md)
+
 # 组件说明：
+- [ngx-perfect-scrollbar](/src/app/modules/perfect-scrollbar-demo/readme.md)
 - [ngx-shade](/src/app/modules/shade-demo/readme.md)
 
 # 指令说明

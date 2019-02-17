@@ -12,6 +12,10 @@ const routes: Routes = [
     },
     children: [
       {
+        path: 'perfect-scrollbar-demo',
+        loadChildren: './../perfect-scrollbar-demo/perfect-scrollbar-demo.module#PerfectScrollbarDemoModule'
+      },
+      {
         path: 'prismjs-demo',
         loadChildren: './../prismjs-demo/prismjs-demo.module#PrismjsDemoModule'
       },

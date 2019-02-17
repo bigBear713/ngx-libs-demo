@@ -1,4 +1,8 @@
 # v7.0.0
+## 2019-02-17
+### ngx-libs
+- ngx-perfect-scrollbar:完成perfect-scrollbar滚动条组件（wangjx）；
+
 ## 2019-02-16
 ### ngx-libs
 - ngx-prismjs:修改指令中服务示例名称，提升代码可读性（wangjx）；

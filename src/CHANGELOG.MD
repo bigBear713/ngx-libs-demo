@@ -1,4 +1,8 @@
 # v7.0.0
+## 2019-02-17
+### ngx-libs-demo
+- 编写perfect-scrollbar-demo滚动条组件使用示例,并在docs中使用（wangjx）；
+
 ## 2019-02-10
 ### ngx-libs-demo
 - 更新prismjs-demo中的readme.md指令说明文件的内容（wangjx）；
