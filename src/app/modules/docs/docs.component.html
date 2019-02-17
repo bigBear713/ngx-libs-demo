@@ -1,8 +1,10 @@
-<div>
+<div class="navigate">
     <h3>导航</h3>
     <a *ngFor="let item of menuList" [routerLink]="item.link">{{item.name}}</a>
 </div>
-<div>
+<div class="demo">
     <h3>示例</h3>
-    <router-outlet></router-outlet>
+    <ngx-perfect-scrollbar class="content">
+        <router-outlet></router-outlet>
+    </ngx-perfect-scrollbar>
 </div>

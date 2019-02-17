@@ -1,4 +1,4 @@
-# ngx-shade组件：
+# ngxPrismjs指令：
 ## 说明
 - 这是一个代码高亮组件，实现将指定区域内的代码高亮显示。
 - 使用时，需要引入模块“NgxLibsModule”或“NgxPrismjsModule”.引入“NgxLibsModule”时，可使用ngx-libs中的任何一种组件；引入“NgxPrismjsModule”时，将只能使用当前组件；

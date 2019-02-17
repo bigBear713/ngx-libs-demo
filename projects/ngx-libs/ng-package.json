@@ -3,6 +3,7 @@
   "dest": "../../node_modules/ngx-libs",
   "deleteDestPath": false,
   "whitelistedNonPeerDependencies": [
+    "perfect-scrollbar",
     "prismjs",
     "tslib"
   ],
