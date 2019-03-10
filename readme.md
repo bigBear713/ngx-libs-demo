@@ -18,6 +18,10 @@
 - 以开发模式编译部署整个示例工程：执行命令：`npm run build`
 - 以生产模式模式编译部署整个示例工程：执行命令：`npm run build:prod`
 
+# 快速调试
+- 使用ngx-libs中的组件等，默认是调用node-modules中的代码。这在开发过程中可能会造成不便。当需要直接调试ngx-libs中的组件时，可按下面的说明进行调整：
+1. src\tsconfig.app.json中，compilerOptions.paths节点中增加配置：` "ngx-libs": ["../projects/ngx-libs/src/public_api.ts"] `；
+
 # [ngx-libs更新日志](/projects/ngx-libs/changelog.md)
 
 # [ngx-libs-demo更新日志](/src/changelog.md)
