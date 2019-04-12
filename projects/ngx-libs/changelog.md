@@ -1,4 +1,10 @@
 # v7.0.0
+## 2019-04-12
+### ngx-libs
+- ngx-jsoneditor:完成jsoneditor组件（wangjx）；
+- ngx-perfect-scrollbar:调整部分样式class名称,命名规范化（wangjx）；
+- 去除无用的模块引用（wangjx）；
+
 ## 2019-02-17
 ### ngx-libs
 - ngx-perfect-scrollbar:完成perfect-scrollbar滚动条组件（wangjx）；

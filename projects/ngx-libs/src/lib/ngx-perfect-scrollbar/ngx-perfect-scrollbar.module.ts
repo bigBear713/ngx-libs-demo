@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { NgxPerfectScrollbarComponent } from './ngx-perfect-scrollbar.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [],
   declarations: [NgxPerfectScrollbarComponent],
   exports: [NgxPerfectScrollbarComponent]
 })

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { NgxShadeModule } from './ngx-shade/index';
-import { NgxPrismjsModule } from './ngx-prismjs/index';
+import { NgxJsoneditorModule } from './ngx-jsoneditor/index';
 import { NgxPerfectScrollbarModule } from './ngx-perfect-scrollbar/index';
+import { NgxPrismjsModule } from './ngx-prismjs/index';
+import { NgxShadeModule } from './ngx-shade/index';
 
 const MODULES = [
+  NgxJsoneditorModule,
+  NgxPerfectScrollbarModule,
   NgxPrismjsModule,
   NgxShadeModule,
-  NgxPerfectScrollbarModule
 ];
 
 @NgModule({

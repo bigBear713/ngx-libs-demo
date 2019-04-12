@@ -1,5 +1,9 @@
 [
     {
+        "name": "jsoneditor编辑器",
+        "link": "/docs/jsoneditor-demo"
+    },
+    {
         "name": "perfect-scrollbar滚动条",
         "link": "/docs/perfect-scrollbar-demo"
     },

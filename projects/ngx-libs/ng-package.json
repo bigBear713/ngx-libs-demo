@@ -3,6 +3,8 @@
   "dest": "../../node_modules/ngx-libs",
   "deleteDestPath": false,
   "whitelistedNonPeerDependencies": [
+    "jsoneditor",
+    "lodash",
     "perfect-scrollbar",
     "prismjs",
     "tslib"

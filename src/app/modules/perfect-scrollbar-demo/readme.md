@@ -12,7 +12,7 @@
 - [ngOptions] - Object - perfect-scrollbar滚动条的配置信息，具体配置见官方说明（https://github.com/utatti/perfect-scrollbar.git）;
 - [ngRefresh] - boolean - 是否刷新滚动条。true表示刷新，false表示不刷新。支持双向绑定写法[(ngRefresh)]="show"；
 - (ngRefreshChange) - EventEmitter - 获取当前是否正在刷新滚动条。当值为false时表示不刷新或者已经刷新完毕；
-- (instanceChange) - EventEmitter - 获取当前滚动条实例；
+- (ngInstanceChange) - EventEmitter - 获取当前滚动条实例；
 ### SCROLL_DIRECTION:滚动方向枚举类型
 - SCROLL_TOP - 'scrollTop' - 向top方向滚动；
 - SCROLL_LEFT - 'scrollLeft' - 向left方向滚动；

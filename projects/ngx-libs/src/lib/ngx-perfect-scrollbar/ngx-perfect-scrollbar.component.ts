@@ -14,7 +14,7 @@ import {
 @Component({
   selector: 'ngx-perfect-scrollbar',
   template: `
-  <div class="perfect-scrollbar">
+  <div class="ngx-perfect-scrollbar">
     <ng-content></ng-content>
   </div>`,
   styles: [`
@@ -25,7 +25,7 @@ import {
       height: 100%;
   }
 
-  .perfect-scrollbar {
+  .ngx-perfect-scrollbar {
       width: 100%;
       height: 100%;
       /** 在ie浏览器和Edge浏览器中，有时候会滚动条无法显示的异常，
@@ -43,14 +43,14 @@ export class NgxPerfectScrollbarComponent implements OnInit, AfterViewInit, OnDe
 
   set instance(instance: any) {
     this._instance = instance;
-    this.instanceChange.emit(instance);
+    this.ngInstanceChange.emit(instance);
   }
 
   get instance(): any {
     return this._instance;
   }
 
-  @Output() instanceChange = new EventEmitter<any>();
+  @Output() ngInstanceChange = new EventEmitter<any>();
   // 配置信息
   private _ngOptions: Object = {};
 
