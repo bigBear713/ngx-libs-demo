@@ -1,5 +1,5 @@
 <div class="demo-content">
-  <ngx-perfect-scrollbar (instanceChange)="getPSInstance($event)">
+  <ngx-perfect-scrollbar (ngInstanceChange)="getPSInstance($event)">
     <div class="example-content">
       <p> # ngx-perfect-scrollbar组件：</p>
       <p> ## 说明</p>
@@ -20,7 +20,7 @@
         是否刷新滚动条。true表示刷新，false表示不刷新。支持双向绑定写法[(ngRefresh)]="show"；</p>
       <p> - (ngRefreshChange) - EventEmitter -
         获取当前是否正在刷新滚动条。当值为false时表示不刷新或者已经刷新完毕；</p>
-      <p>- (instanceChange) - EventEmitter - 获取当前滚动条实例；</p>
+      <p>- (ngInstanceChange) - EventEmitter - 获取当前滚动条实例；</p>
       <p>### SCROLL_DIRECTION:滚动方向枚举类型</p>
       <p>- SCROLL_TOP - 'scrollTop' - 向top方向滚动；</p>
       <p>- SCROLL_LEFT - 'scrollLeft' - 向left方向滚动；</p>

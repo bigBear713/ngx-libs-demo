@@ -1,0 +1,7 @@
+import { NGX_JSONEDITOR_MODE } from "./NGX_JSONEDITOR_MODE.enum";
+/** jsoneditor配置中的mode属性支持的值
+ *
+ *
+ * @export
+ */
+export type NgxJsoneditorMode = NGX_JSONEDITOR_MODE.CODE | NGX_JSONEDITOR_MODE.TREE | NGX_JSONEDITOR_MODE.TEXT | NGX_JSONEDITOR_MODE.VIEW | NGX_JSONEDITOR_MODE.FORM;

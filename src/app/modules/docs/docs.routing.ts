@@ -12,6 +12,10 @@ const routes: Routes = [
     },
     children: [
       {
+        path: 'jsoneditor-demo',
+        loadChildren: './../jsoneditor-demo/jsoneditor-demo.module#JsoneditorDemoModule'
+      },
+      {
         path: 'perfect-scrollbar-demo',
         loadChildren: './../perfect-scrollbar-demo/perfect-scrollbar-demo.module#PerfectScrollbarDemoModule'
       },

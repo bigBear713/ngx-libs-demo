@@ -1,0 +1,31 @@
+<div class="demo-content">
+  <div>
+    <label>结果:</label>
+    {{ result|json }}
+  </div>
+  <div class="content-item">
+    <h3>code模式</h3>
+    <ngx-jsoneditor [ngOptions]="jsonOption1" [ngData]="jsonData"
+      (ngDataChange)="getJsonData($event)"></ngx-jsoneditor>
+  </div>
+  <div class="content-item">
+    <h3>text模式</h3>
+    <ngx-jsoneditor [ngOptions]="jsonOption5" [ngData]="jsonData"
+      (ngDataChange)="getJsonData($event)"></ngx-jsoneditor>
+  </div>
+  <div class="content-item">
+    <h3>tree模式</h3>
+    <ngx-jsoneditor [ngOptions]="jsonOption2" [ngData]="jsonData"
+      (ngDataChange)="getJsonData($event)"></ngx-jsoneditor>
+  </div>
+  <div class="content-item">
+    <h3>view模式</h3>
+    <ngx-jsoneditor [ngOptions]="jsonOption3" [ngData]="jsonData"
+      (ngDataChange)="getJsonData($event)"></ngx-jsoneditor>
+  </div>
+  <div class="content-item">
+    <h3>form模式</h3>
+    <ngx-jsoneditor [ngOptions]="jsonOption4" [ngData]="jsonData"
+      (ngDataChange)="getJsonData($event)"></ngx-jsoneditor>
+  </div>
+</div>

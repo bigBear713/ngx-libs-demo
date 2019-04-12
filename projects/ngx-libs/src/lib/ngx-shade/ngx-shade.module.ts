@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgxShadeComponent } from './ngx-shade.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [NgxShadeComponent],
   exports: [NgxShadeComponent]
 })

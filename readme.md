@@ -27,6 +27,7 @@
 # [ngx-libs-demo更新日志](/src/changelog.md)
 
 # 组件说明：
+- [ngx-jsoneditor](/src/app/modules/jsoneditor-demo/readme.md)
 - [ngx-perfect-scrollbar](/src/app/modules/perfect-scrollbar-demo/readme.md)
 - [ngx-shade](/src/app/modules/shade-demo/readme.md)
 
