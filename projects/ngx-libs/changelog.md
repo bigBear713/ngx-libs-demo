@@ -1,4 +1,8 @@
 # v7.0.0
+## 2019-05-06
+### ngx-libs
+- 调整导出方式（wangjx）；
+
 ## 2019-04-12
 ### ngx-libs
 - ngx-jsoneditor:完成jsoneditor组件（wangjx）；
