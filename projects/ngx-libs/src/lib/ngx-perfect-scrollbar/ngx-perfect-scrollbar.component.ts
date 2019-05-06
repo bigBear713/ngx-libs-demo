@@ -1,4 +1,3 @@
-import { NgxPerfectScrollbarService } from './ngx-perfect-scrollbar.service';
 import {
   Component,
   OnInit,
@@ -10,6 +9,7 @@ import {
   ElementRef,
   HostListener
 } from '@angular/core';
+import { NgxPerfectScrollbarService } from './ngx-perfect-scrollbar.service';
 
 @Component({
   selector: 'ngx-perfect-scrollbar',
