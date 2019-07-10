@@ -89,7 +89,6 @@ import 'prismjs/components/prism-scss.min';
 
 /**  */
 // -----------/
-import 'prismjs/components/prism-django.min';
 
 import 'prismjs/components/prism-markup.min';
 // ------------//
@@ -218,6 +217,7 @@ import 'prismjs/components/prism-visual-basic.min';
 import 'prismjs/components/prism-wasm.min';
 import 'prismjs/components/prism-xojo.min';
 import 'prismjs/components/prism-yaml.min';
+import 'prismjs/components/prism-django.min';
 
 @Injectable({
   providedIn: 'root'
