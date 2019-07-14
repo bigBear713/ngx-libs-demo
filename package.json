@@ -17,6 +17,10 @@
     "build": "ng build --base-href ./ ",
     "build:prod": "npm run build -- --prod  ",
     "build:prod:aot": "npm run build:prod -- --aot ",
+    "build:prod:analyze:source-map-explorer": "npm run build:prod -- --source-map",
+    "analyze:source-map-explorer": "node_modules/.bin/source-map-explorer ",
+    "build:prod:analyze:webpack-bundle-analyzer": "npm run build:prod -- --stats-json && npm run analyze:webpack-bundle-analyzer",
+    "analyze:webpack-bundle-analyzer": "node_modules/.bin/webpack-bundle-analyzer dist/stats.json ",
     "gene:lib": "ng generate library --prefix=ngx",
     "build:lib": "ng build --prod ",
     "npm_pack:ngx-libs": "cp projects/ngx-libs/changelog.md node_modules/ngx-libs/ && cd node_modules/ngx-libs && npm pack && cd ../../ && mv node_modules/ngx-libs/*.tgz libs/ngx-libs/",
@@ -78,12 +82,14 @@
     "npm-run-all": "4.1.5",
     "protractor": "5.4.1",
     "rimraf": "2.6.2",
+    "source-map-explorer": "^2.0.1",
     "stylelint": "9.9.0",
     "ts-node": "7.0.1",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.3",
     "tslint": "5.11.0",
     "tslint-language-service": "0.9.9",
-    "typescript": "3.2.4"
+    "typescript": "3.2.4",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }

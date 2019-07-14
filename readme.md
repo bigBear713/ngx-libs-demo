@@ -22,6 +22,22 @@
 - 使用ngx-libs中的组件等，默认是调用node-modules中的代码。这在开发过程中可能会造成不便。当需要直接调试ngx-libs中的组件时，可按下面的说明进行调整：
 1. src\tsconfig.app.json中，compilerOptions.paths节点中增加配置：` "ngx-libs": ["../projects/ngx-libs/src/public_api.ts"] `；
 
+# 打包优化
+- 打包构建成生产环境的代码是必然遇到的场景。减小打包后文件的体积，加快内容的加载，是必然得需求。这边引入了两个常用的打包后分析插件source-map-explorer和webpack-bundle-analyzer。可以用于分析打包后生成的文件的内容组成，从而有针对性的进行打包优化，去除无用的内容。
+## source-map-explorer
+- 使用该插件，在打包时，需要同步生成.map文件，才能对每个js、css文件进行分析。具体可见官网(https://github.com/danvk/source-map-explorer)；
+- 打包时生成.map文件的命令：`ng build --prod --source-map`；
+- 分析打包后的文件的命令：`node_modules/.bin/source-map-explorer dist/main.*.js`。其中`dist/main.*.js`是要分析的文件，比如这边是main.js文件，因为打包时文件名加了hash，所以中间以*模糊化处理。
+- 效果图
+![Image text](src/assets/analyze/source-map-explorer/source-map-explorer.png)
+## webpack-bundle-analyzer
+- 使用该插件，在打包时，需要同步生成stats.json文件，才能对每个js文件进行分析。具体可见官网(https://github.com/webpack-contrib/webpack-bundle-analyzer)；
+- 打包时生成stats.json文件的命令：`ng build --prod --stats-json`;
+- 分析打包后的文件的命令：`node_modules/.bin/webpack-bundle-analyzer dist/stats.json`；
+- 为了方便，在package.json的scripts中写了一个命令，方便在打包时时直接分析打包后的命令：`npm run build:prod:analyze:webpack-bundle-analyzer`;
+- 效果图
+![Image text](src/assets/analyze/webpack-bundle-analyzer/webpack-bundle-analyzer.png)
+
 # [ngx-libs更新日志](/projects/ngx-libs/changelog.md)
 
 # [ngx-libs-demo更新日志](/src/changelog.md)
