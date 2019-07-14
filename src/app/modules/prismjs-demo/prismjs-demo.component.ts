@@ -9,7 +9,7 @@ export class PrismjsDemoComponent implements OnInit {
 
   hamlContent = `= ['hi', 'there', 'reader!'].join " "`;
 
-  cssContent=`
+  cssContent = `
     .ui-datatable table {
       border-collapse:collapse;
       width: 100% !important;
@@ -17,7 +17,7 @@ export class PrismjsDemoComponent implements OnInit {
     }
   `;
 
-  scssContent=`
+  scssContent = `
     $height:30px;
     .ui-datatable table {
         border-collapse:collapse;
@@ -26,7 +26,7 @@ export class PrismjsDemoComponent implements OnInit {
     }
   `;
 
-  typescriptContent=`
+  typescriptContent = `
     import { MenuItem } from './models';
     import { Component, OnInit } from '@angular/core';
     import { ActivatedRoute } from '@angular/router';

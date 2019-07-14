@@ -1,4 +1,9 @@
 # v7.0.0
+## 2019-07-10
+### ngx-libs
+- ngx-prismjs:修复无法使用，会报错的问题（wangjx）；
+- ngx-prismjs:升级primsjs的版本，从v1.15.0-->1.16.0（wangjx）；
+
 ## 2019-05-06
 ### ngx-libs
 - 调整导出方式（wangjx）；
