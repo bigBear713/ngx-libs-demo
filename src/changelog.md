@@ -1,12 +1,4 @@
 # v7.0.0
-## 2019-07-14
-### ngx-libs-demo
-- 新增source-map-explorer插件和webpack-bundle-analyzer插件，用于分析减小打包后的代码体积（wangjx）；
-
-## 2019-07-10
-### ngx-libs-demo
-- 调整ts默认的版本，修复因ts版本问题导致代码无法运行的问题（wangjx）；
-
 ## 2019-04-12
 ### ngx-libs-demo
 - 编写jsoneditor-demo编辑器组件使用示例,并在docs中使用（wangjx）；

@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
 import Prism from 'prismjs';
 import 'style-loader!prismjs/themes/prism.css';
 
 /** 核心 */
 // import 'prismjs/components/prism-core.min';
-
 /** 以下内容的引入顺序是有一定有要求对的。
  * 大部分引入需在继承的文件后面。
  * 但是也有小部分以这种方式引入会有问题。
  * 具体怎么引入后续再查查相关资料
  */
-
+/** 下面的文件适用于各种场景，但是很多时候不用那么多 */
+/** 最好还是让开发者自己引入所需的文件 */
+/**  */
 /**  */
 import 'prismjs/components/prism-clike.min';
 // -----------//
@@ -219,12 +219,19 @@ import 'prismjs/components/prism-xojo.min';
 import 'prismjs/components/prism-yaml.min';
 import 'prismjs/components/prism-django.min';
 
+import {
+    Injectable,
+    NgZone
+} from '@angular/core';
+
 @Injectable({
   providedIn: 'root'
 })
 export class NgxPrismjsService {
 
-  constructor() { }
+  constructor(
+    private ngZone: NgZone,
+  ) { }
 
   /** 获取Prism对象
    *
@@ -260,7 +267,9 @@ export class NgxPrismjsService {
    * @memberof NgxPrismjsService
    */
   highlightAll(async?: boolean, callback?: any): void {
-    Prism.highlightAll(async, callback);
+    this.ngZone.runOutsideAngular(() => {
+      Prism.highlightAll(async, callback);
+    });
   }
 
   /** 将容器内的内容全部高亮显示
@@ -272,7 +281,9 @@ export class NgxPrismjsService {
    * @memberof NgxPrismjsService
    */
   highlightAllUnder(container: HTMLElement, async?: boolean, callback?: any): void {
-    Prism.highlightAllUnder(container, async, callback);
+    this.ngZone.runOutsideAngular(() => {
+      Prism.highlightAllUnder(container, async, callback);
+    });
   }
 
   /** 将标签元素内的内容高亮显示
@@ -284,7 +295,9 @@ export class NgxPrismjsService {
    * @memberof NgxPrismjsService
    */
   highlightElement(element: HTMLElement, async?: boolean, callback?: any): void {
-    Prism.highlightElement(element, async, callback);
+    this.ngZone.runOutsideAngular(() => {
+      Prism.highlightElement(element, async, callback);
+    });
   }
 
 }

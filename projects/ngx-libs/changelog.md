@@ -1,4 +1,11 @@
 # v7.0.0
+## 2020-03-28
+### ngx-libs
+- ngx-shade:调整组件更新策略，优化性能（wangjx）；
+- ngx-prismjs:优化性能（wangjx）；
+- ngx-perfect-scrollbar:调整组件更新策略，优化性能（wangjx）；
+- ngx-jsoneditor:调整组件更新策略，优化性能（wangjx）；
+
 ## 2019-07-10
 ### ngx-libs
 - ngx-prismjs:修复无法使用，会报错的问题（wangjx）；
