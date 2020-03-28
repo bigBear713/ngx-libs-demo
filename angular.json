@@ -28,6 +28,9 @@
               }
             ],
             "styles": [
+              "node_modules/jsoneditor/dist/jsoneditor.min.css",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/prismjs/themes/prism.css",
               "src/theme/style.scss"
             ],
             "scripts": []

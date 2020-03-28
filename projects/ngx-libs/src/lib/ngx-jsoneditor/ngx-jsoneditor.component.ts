@@ -1,18 +1,18 @@
 import * as _ from 'lodash/lodash.min.js';
 
 import {
-    ChangeDetectionStrategy,
-    Component,
-    ElementRef,
-    EventEmitter,
-    Input,
-    NgZone,
-    OnDestroy,
-    OnInit,
-    Output
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  NgZone,
+  OnDestroy,
+  OnInit,
+  Output
 } from '@angular/core';
 
-import { NgxJsoneditorOptions } from './classes';
+import { NgxJsoneditorOptions } from './model';
 import { NgxJsoneditorService } from './ngx-jsoneditor.service';
 
 @Component({

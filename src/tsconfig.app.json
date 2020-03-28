@@ -2,15 +2,20 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "module": "es2015",
     "baseUrl": "./",
     "types": [],
     "paths": {
       "@angular/*": [
         "../node_modules/@angular/*"
+      ],
+      "ngx-libs": [
+        "../projects/ngx-libs/src/public_api.ts"
       ]
     }
   },
+  "include": [
+    "./**/*.ts"
+  ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"

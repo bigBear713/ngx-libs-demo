@@ -1,6 +1,6 @@
 {
   "name": "ngx-libs",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "dependencies": {
     "jsoneditor": "^5.32.4",
     "lodash": "^4.17.11",
@@ -9,7 +9,7 @@
     "tslib": "^1.9.0"
   },
   "peerDependencies": {
-    "@angular/common": "^7.1.0",
-    "@angular/core": "^7.1.0"
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
   }
 }
