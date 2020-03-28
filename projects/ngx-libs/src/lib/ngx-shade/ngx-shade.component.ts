@@ -1,10 +1,11 @@
 import {
-  Component,
-  OnInit,
-  Input,
-  HostListener,
-  Output,
-  EventEmitter
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    HostListener,
+    Input,
+    OnInit,
+    Output
 } from '@angular/core';
 
 @Component({
@@ -28,7 +29,8 @@ import {
       width:100%;
       height:100%;
     }
-  `]
+  `],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxShadeComponent implements OnInit {
   // 点击遮罩时是否自动隐藏

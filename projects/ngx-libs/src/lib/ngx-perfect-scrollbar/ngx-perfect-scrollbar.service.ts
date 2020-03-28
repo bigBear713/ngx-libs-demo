@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import PerfectScrollbar from 'perfect-scrollbar';
 import 'style-loader!perfect-scrollbar/css/perfect-scrollbar.css';
-import { SCROLL_DIRECTION } from './classes';
+import { SCROLL_DIRECTION } from './model';
 
 /** ngx-perfect-scrollbar组件的功能服务。
  * 其中部分方法的实现参考了zefoy大神的代码（https://github.com/zefoy/ngx-perfect-scrollbar.git）
@@ -66,7 +66,7 @@ export class NgxPerfectScrollbarService {
    *
    *
    * @params {*} instance 滚动条实例
-   * @params {number} animation 
+   * @params {number} animation
    * @params {SCROLL_DIRECTION} target 目标
    * @params {number} value 值
    * @params {number} [speed] 滚动速度
