@@ -38,6 +38,12 @@
 - 效果图
 ![Image text](src/assets/analyze/webpack-bundle-analyzer/webpack-bundle-analyzer.png)
 
+# 组件模块的引入
+- ngx-libs提供两种引入方式，一种是引入NgxLibsModule模块，另一种是引入对应的组件模块（如NgxShadeModule，NgxPrismjsModule等）。
+- 如果用引入NgxLibsModule模块的方式使用组件，则可以使用全部的组件，不管是ngx-shared还是ngx-perfect-scrollbar，不用再引入相关的组件模块。但是会造成的影响是，打包构建后可能会使打包后生成的文件体积变大。因为Angular中的摇树优化目前还有局限性，一些第三方js插件虽然没用使用到，还是会被打包进去，比如moment.js。
+- 如果用引入相关模块的方式使用组件，则每使用一种组件，需要引入相关的组件模块才行。过程会繁琐点，但是相对的，不会造成无用的组件模块打包构建后造成生成的文件体积变大的问题。
+- 根模块以及在根模块中急性引入的模块推荐按需引入。懒加载的模块推荐使用NgxLibsModule引入。因为懒加载的模块会经过分析，将组件拆分成多个js文件，在需要的时候才加载相关的js文件。而根模块中的内容打包后为main.js中的内容，是访问项目是最先开始加载的。如果main.js体积过大，会造成用户访问速度变慢的问题。因为根模块的内容和其它懒加载的模块不同，根模块中的内容是第一时间加载，并运行起来的，因此它自身需要引入所有依赖的代码，因此就造成可能main.js体积过大的问题；
+
 # [ngx-libs更新日志](/projects/ngx-libs/changelog.md)
 
 # [ngx-libs-demo更新日志](/src/changelog.md)
