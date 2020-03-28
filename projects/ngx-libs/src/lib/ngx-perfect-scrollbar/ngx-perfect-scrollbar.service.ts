@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import PerfectScrollbar from 'perfect-scrollbar';
-import 'style-loader!perfect-scrollbar/css/perfect-scrollbar.css';
+// 目前这种css引入方式已经被angualr官方禁用，所以只能开发者自己在angular.json中引用，或者所需的地方引入
+// import 'style-loader!perfect-scrollbar/css/perfect-scrollbar.css';
 import { SCROLL_DIRECTION } from './model';
 
 /** ngx-perfect-scrollbar组件的功能服务。

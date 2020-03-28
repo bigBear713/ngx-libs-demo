@@ -1,5 +1,6 @@
 import Prism from 'prismjs';
-import 'style-loader!prismjs/themes/prism.css';
+// 目前这种css引入方式已经被angualr官方禁用，所以只能开发者自己在angular.json中引用，或者所需的地方引入
+// import 'style-loader!prismjs/themes/prism.css';
 
 /** 核心 */
 // import 'prismjs/components/prism-core.min';
@@ -220,8 +221,8 @@ import 'prismjs/components/prism-yaml.min';
 import 'prismjs/components/prism-django.min';
 
 import {
-    Injectable,
-    NgZone
+  Injectable,
+  NgZone
 } from '@angular/core';
 
 @Injectable({

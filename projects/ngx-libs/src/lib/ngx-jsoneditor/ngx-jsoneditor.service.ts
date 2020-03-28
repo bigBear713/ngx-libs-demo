@@ -1,13 +1,14 @@
-import 'style-loader!jsoneditor/dist/jsoneditor.min.css';
+// 随着版本升级，这种css引入方式已经不行了，所以只能在angular.json中引用
+// import 'style-loader!jsoneditor/dist/jsoneditor.min.css';
 
 import * as JSONEditor from 'jsoneditor/dist/jsoneditor.min.js';
 
 import {
-    Injectable,
-    NgZone
+  Injectable,
+  NgZone
 } from '@angular/core';
 
-import { NgxJsoneditorOptions } from './classes';
+import { NgxJsoneditorOptions } from './model';
 
 /** ngx-jsoneditor组件的功能服务
  *
