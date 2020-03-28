@@ -1,14 +1,17 @@
 import {
-  Component,
-  OnInit,
-  AfterViewInit,
-  OnDestroy,
-  Input,
-  Output,
-  EventEmitter,
-  ElementRef,
-  HostListener
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    HostListener,
+    Input,
+    NgZone,
+    OnDestroy,
+    OnInit,
+    Output
 } from '@angular/core';
+
 import { NgxPerfectScrollbarService } from './ngx-perfect-scrollbar.service';
 
 @Component({
@@ -30,11 +33,12 @@ import { NgxPerfectScrollbarService } from './ngx-perfect-scrollbar.service';
       height: 100%;
       /** 在ie浏览器和Edge浏览器中，有时候会滚动条无法显示的异常，
        * 因为IE和Edge浏览器中默认将该属性设置为none，导致无法出现滚动条，
-       * 通过手动设置该属性的值为auto可解决 
+       * 通过手动设置该属性的值为auto可解决
        */
       -ms-overflow-style: auto;
   }
   `],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxPerfectScrollbarComponent implements OnInit, AfterViewInit, OnDestroy {
 
@@ -80,6 +84,7 @@ export class NgxPerfectScrollbarComponent implements OnInit, AfterViewInit, OnDe
 
   constructor(
     private elementRef: ElementRef,
+    private ngZone: NgZone,
     private service: NgxPerfectScrollbarService
   ) { }
 
@@ -99,7 +104,9 @@ export class NgxPerfectScrollbarComponent implements OnInit, AfterViewInit, OnDe
    * @memberof NgxPerfectScrollbarComponent
    */
   initPerfectScrollbar(): void {
-    this.instance = this.service.initPerfectScrollbar(this.elementRef.nativeElement, this.ngOptions, this.instance);
+    this.ngZone.runOutsideAngular(() => {
+      this.instance = this.service.initPerfectScrollbar(this.elementRef.nativeElement, this.ngOptions, this.instance);
+    });
   }
 
   /** 浏览器窗口改变时，更新滚动条
