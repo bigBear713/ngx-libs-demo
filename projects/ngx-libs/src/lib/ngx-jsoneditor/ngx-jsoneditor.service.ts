@@ -1,6 +1,12 @@
-import { Injectable } from '@angular/core';
-import * as JSONEditor from 'jsoneditor/dist/jsoneditor.min.js';
 import 'style-loader!jsoneditor/dist/jsoneditor.min.css';
+
+import * as JSONEditor from 'jsoneditor/dist/jsoneditor.min.js';
+
+import {
+    Injectable,
+    NgZone
+} from '@angular/core';
+
 import { NgxJsoneditorOptions } from './classes';
 
 /** ngx-jsoneditor组件的功能服务
@@ -13,7 +19,9 @@ import { NgxJsoneditorOptions } from './classes';
 })
 export class NgxJsoneditorService {
 
-  constructor() { }
+  constructor(
+    private ngZone: NgZone,
+  ) { }
 
   /** 销毁jsoneditor的实例
    *
@@ -22,9 +30,11 @@ export class NgxJsoneditorService {
    * @memberof NgxJsoneditorService
    */
   destroyJsoneditor(instance: any): void {
-    if (instance) {
-      instance.destroy();
-    }
+    this.ngZone.runOutsideAngular(() => {
+      if (instance) {
+        instance.destroy();
+      }
+    });
   }
 
   /** 获取实例中的数据
@@ -58,7 +68,9 @@ export class NgxJsoneditorService {
    * @memberof NgxJsoneditorService
    */
   setData(instance: any, data: Object): void {
-    instance.set(data);
+    this.ngZone.runOutsideAngular(() => {
+      instance.set(data);
+    });
   }
 
 }

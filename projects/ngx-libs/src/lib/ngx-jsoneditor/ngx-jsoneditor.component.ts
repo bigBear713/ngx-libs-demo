@@ -1,16 +1,19 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  ElementRef,
-  OnDestroy,
-  Output,
-  EventEmitter
-} from '@angular/core';
 import * as _ from 'lodash/lodash.min.js';
-import { of, from } from 'rxjs';
-import { NgxJsoneditorService } from './ngx-jsoneditor.service';
+
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    NgZone,
+    OnDestroy,
+    OnInit,
+    Output
+} from '@angular/core';
+
 import { NgxJsoneditorOptions } from './classes';
+import { NgxJsoneditorService } from './ngx-jsoneditor.service';
 
 @Component({
   selector: 'ngx-jsoneditor',
@@ -20,31 +23,32 @@ import { NgxJsoneditorOptions } from './classes';
       display: block;
       width: 100%;
       height: 100%;
-    
+
       ::ng-deep {
         * {
           box-sizing: border-box;
         }
       }
     }
-    
+
     .ngx-jsoneditor {
       width: 100%;
       height: 100%;
-    
+
       ::ng-deep {
         div.jsoneditor-tree {
           div.jsoneditor-tree-inner {
             padding-bottom: 0;
           }
         }
-    
+
         table.jsoneditor-tree {
           margin: 0;
         }
       }
     }
-  `]
+  `],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgxJsoneditorComponent implements OnInit, OnDestroy {
   // 用户定义的配置信息
@@ -105,6 +109,7 @@ export class NgxJsoneditorComponent implements OnInit, OnDestroy {
 
   constructor(
     private elementRef: ElementRef,
+    private ngZone: NgZone,
     private service: NgxJsoneditorService,
   ) { }
 
@@ -122,23 +127,25 @@ export class NgxJsoneditorComponent implements OnInit, OnDestroy {
    */
   getData(): Promise<any> {
     return new Promise((resolve, reject) => {
-      const result = {
-        isValid: false,
-        value: null
-      };
-      if (this.jsoneditorInstance) {
-        let jsonData = null;
-        let isValid;
-        try {
-          jsonData = this.service.getData(this.jsoneditorInstance);
-          isValid = true;
-        } catch (e) {
-          isValid = false;
+      this.ngZone.runOutsideAngular(() => {
+        const result = {
+          isValid: false,
+          value: null
+        };
+        if (this.jsoneditorInstance) {
+          let jsonData = null;
+          let isValid;
+          try {
+            jsonData = this.service.getData(this.jsoneditorInstance);
+            isValid = true;
+          } catch (e) {
+            isValid = false;
+          }
+          result.isValid = isValid;
+          result.value = jsonData;
         }
-        result.isValid = isValid;
-        result.value = jsonData;
-      }
-      resolve(result);
+        resolve(result);
+      });
     });
   }
 
@@ -149,13 +156,15 @@ export class NgxJsoneditorComponent implements OnInit, OnDestroy {
    * @memberof NgxJsoneditorComponent
    */
   initJsoneditor(options: NgxJsoneditorOptions): void {
-    // 初始化前先销毁原来的实例
-    this.jsoneditorInstance = null;
-    const container = this.elementRef.nativeElement.children[0];
-    this.jsoneditorInstance = this.service.initJsoneditor(container, options);
-    if (this.ngData) {
-      this.setData(this._ngData);
-    }
+    this.ngZone.runOutsideAngular(() => {
+      // 初始化前先销毁原来的实例
+      this.jsoneditorInstance = null;
+      const container = this.elementRef.nativeElement.children[0];
+      this.jsoneditorInstance = this.service.initJsoneditor(container, options);
+      if (this.ngData) {
+        this.setData(this._ngData);
+      }
+    });
   }
 
   /** 当内容改变时触发的函数
@@ -164,22 +173,24 @@ export class NgxJsoneditorComponent implements OnInit, OnDestroy {
    * @memberof NgxJsoneditorComponent
    */
   onChange = () => {
-    // 如果用户有自己定义onChange事件，
-    // 那么这时候就要执行一下
-    if (this.customOptions.onChange) {
-      this.customOptions.onChange();
-    }
-    try {
-      this.getData().then(jsonData => {
-        const isValid = jsonData.isValid;
-        if (isValid) {
-          this.ngDataChange.emit(jsonData.value);
-        }
-      });
-    } catch (e) {
-      // console.log(e);
-      this.ngDataChange.emit(null);
-    }
+    this.ngZone.runOutsideAngular(() => {
+      // 如果用户有自己定义onChange事件，
+      // 那么这时候就要执行一下
+      if (this.customOptions.onChange) {
+        this.customOptions.onChange();
+      }
+      try {
+        this.getData().then(jsonData => {
+          const isValid = jsonData.isValid;
+          if (isValid) {
+            this.ngDataChange.emit(jsonData.value);
+          }
+        });
+      } catch (e) {
+        // console.log(e);
+        this.ngDataChange.emit(null);
+      }
+    });
   }
 
   /** 设置jsoneditor中的json数据
@@ -188,18 +199,20 @@ export class NgxJsoneditorComponent implements OnInit, OnDestroy {
    * @params {Object} data 要设置的数据
    * @memberof NgxJsoneditorComponent
    */
-  setData(data: Object) {
-    if (!data) {
-      data = {};
-      this.ngDataChange.emit(data);
-    }
-    this.getData().then(jsonData => {
-      if (jsonData.isValid && !_.isEqual(jsonData.value, data)) {
-        if (!this.jsoneditorInstance) {
-          this.initJsoneditor(this.ngOptions);
-        }
-        this.service.setData(this.jsoneditorInstance, data);
+  setData(data: Object): void {
+    this.ngZone.runOutsideAngular(() => {
+      if (!data) {
+        data = {};
+        this.ngDataChange.emit(data);
       }
+      this.getData().then(jsonData => {
+        if (jsonData.isValid && !_.isEqual(jsonData.value, data)) {
+          if (!this.jsoneditorInstance) {
+            this.initJsoneditor(this.ngOptions);
+          }
+          this.service.setData(this.jsoneditorInstance, data);
+        }
+      });
     });
   }
 
