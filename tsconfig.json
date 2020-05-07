@@ -18,11 +18,7 @@
       "es2018",
       "dom"
     ],
-    "plugins": [
-      {
-        "name": "tslint-language-service"
-      }
-    ],
+    "plugins": [],
     "types": [],
     "paths": {}
   },
