@@ -1,6 +1,6 @@
 {
   "name": "ngx-libs-demo",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "license": "MIT",
   "description": "使用angular写的几个简单组件，此工程包含组件源码和使用示例",
   "repository": {
