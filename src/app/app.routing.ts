@@ -7,7 +7,7 @@ const routes: Routes = [
     children: [
       {
         path: 'docs',
-        loadChildren: './modules/docs/docs.module#DocsModule',
+        loadChildren: () => import('./modules/docs/docs.module').then(m => m.DocsModule),
       },
       {
         path: '',

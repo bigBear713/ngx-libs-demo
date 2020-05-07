@@ -13,19 +13,19 @@ const routes: Routes = [
     children: [
       {
         path: 'jsoneditor-demo',
-        loadChildren: './../jsoneditor-demo/jsoneditor-demo.module#JsoneditorDemoModule'
+        loadChildren: () => import('./../jsoneditor-demo/jsoneditor-demo.module').then(m => m.JsoneditorDemoModule)
       },
       {
         path: 'perfect-scrollbar-demo',
-        loadChildren: './../perfect-scrollbar-demo/perfect-scrollbar-demo.module#PerfectScrollbarDemoModule'
+        loadChildren: () => import('./../perfect-scrollbar-demo/perfect-scrollbar-demo.module').then(m => m.PerfectScrollbarDemoModule)
       },
       {
         path: 'prismjs-demo',
-        loadChildren: './../prismjs-demo/prismjs-demo.module#PrismjsDemoModule'
+        loadChildren: () => import('./../prismjs-demo/prismjs-demo.module').then(m => m.PrismjsDemoModule)
       },
       {
         path: 'shade-demo',
-        loadChildren: './../shade-demo/shade-demo.module#ShadeDemoModule'
+        loadChildren: () => import('./../shade-demo/shade-demo.module').then(m => m.ShadeDemoModule)
       },
       {
         path: '',

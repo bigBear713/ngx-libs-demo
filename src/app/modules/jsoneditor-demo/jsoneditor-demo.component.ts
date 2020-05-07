@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxJsoneditorOptions, NGX_JSONEDITOR_MODE } from 'ngx-libs';
+import {
+    NGX_JSONEDITOR_MODE,
+    NgxJsoneditorOptions
+} from 'ngx-libs';
+
+import {
+    Component,
+    OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'app-jsoneditor-demo',
@@ -57,7 +64,7 @@ export class JsoneditorDemoComponent implements OnInit {
    */
   getJsonData(jsonData: Object): void {
     console.log(jsonData);
-    this.result = jsonData;
+    this.result = { ...jsonData };
   }
 
 }
