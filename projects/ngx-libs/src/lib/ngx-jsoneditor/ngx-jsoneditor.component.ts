@@ -1,15 +1,15 @@
 import * as _ from 'lodash/lodash.min.js';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  NgZone,
-  OnDestroy,
-  OnInit,
-  Output
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    NgZone,
+    OnDestroy,
+    OnInit,
+    Output
 } from '@angular/core';
 
 import { NgxJsoneditorOptions } from './model';
@@ -75,6 +75,7 @@ export class NgxJsoneditorComponent implements OnInit, OnDestroy {
   @Input() set ngData(data: Object) {
     if (this._ngData !== data) {
       this._ngData = data;
+      this.setData(data);
     }
   }
 
